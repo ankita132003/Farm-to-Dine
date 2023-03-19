@@ -1,12 +1,12 @@
 <template>
     <div class="modal-body row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-7">
               <!-- Your first column here -->
               <div class="card align-middle" style="width:auto;">
-                <img src="https://source.unsplash.com/featured?technology" class="card-img-top" alt="..."></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_Farming.jpg " class="card-img-top" alt="..."></div>
             </div>
           
-            <div class="col-12 col-md-6 mt-4">
+            <div class="col-12 col-md-5 mt-4">
                 
         <div class="container">
             <div class="row align-items-center justify-content-center">
@@ -48,8 +48,15 @@
                             
                                     </div>
                                 </div>
+                                <!-- <div class="input-group"> -->
+                                    <label class="checkbox-button">
+                                        <h5><input type="checkbox" name="isfarmer" id="isFarmer" value="isfarmer">
+                                         I'm a Farmer </h5>
+                                    </label>
+                                <!-- </div> -->
                                 <div class="mt-4">
-                                    <button type="submit" style="color: aliceblue; background-color: black;" name="register" class="btn btn-block btn-primary">Sign in</button></div>
+                                    <button type="submit" style="color: aliceblue; background-color: black;" name="register" class="btn btn-block btn-primary">Sign in</button>
+                                </div>
                             </form>
                         </div>
                     </div>
