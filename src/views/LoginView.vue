@@ -1,22 +1,26 @@
 <template>
     <div class="modal-body row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-7">
               <div class="card align-middle" style="width:auto;">
-                <img src="https://source.unsplash.com/featured?technology" class="card-img-top" alt="..."></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_Farming.jpg " class="card-img-top blur" alt="..."></div>
             </div>
-            <div class="col-12 col-md-6 mt-4">
-                <div class="container ">
+            <div class="col-12 col-md-5 mt-4">
+                <div class="container middle ">
                     <div class="row align-items-center justify-content-center ">
                         <div>
                             <div class="card shadow zindex-100 mb-0">
                                 <div class="card-body">
-                                    <div class="mb-5">
+                                    <div class="mb-5 form-body">
+                                        <div class="ml-4 justify-content-center">
+                                            <h2> WELCOME !</h2>
+                                        </div>
                                         <div  v-if="error"  class="alert alert-danger">{{ error }}</div> 
+                                        
                                         <h6 class="h3">
                                      Login To Your Account
                                         </h6>
                                         <p class="text-muted mb-0 link">
-                                              <router-link to="/register" class="router-link">Create new account </router-link>
+                                              <router-link to="/register" class="router-link"> <h5> Create new account </h5></router-link>
                                         </p>
                                     </div>
                                     <span class="clearfix"></span>
@@ -42,7 +46,7 @@
                                             </div>
                                         </div>
         
-                                        <div class="mt-4">
+                                        <div class="mt-4 form-body">
                                             <button type="submit"  name="login" class="btn btn-block btn-primary">Sign in</button></div>
                                     </form>
                                 </div>
@@ -92,7 +96,8 @@ export default {
 </script>
 <style>
     .modal-body{
-        background-color: #f5f5f5;
+        /* background-color: #f5f5f5; */
+        background-color: white;
     }
     .router-link{
         color: black;
@@ -101,5 +106,15 @@ export default {
     .router-link:hover{
         color: blue;
         text-decoration:underline;
+    }
+    .blur{
+        filter: blur(2px);
+    }
+    .form-body{
+        /* margin-top: 50px; */
+        text-align: center;
+    }
+    .middle{
+        margin-top: 200px;
     }
 </style>
