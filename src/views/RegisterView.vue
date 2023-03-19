@@ -1,11 +1,11 @@
 <template>
     <div class="modal-body row">
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-md-7 bg-image">
               <!-- Your first column here -->
               <div class="card align-middle" style="width:auto;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_Farming.jpg " class="card-img-top" alt="..."></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_Farming.jpg " class="card-img-top img" alt="..."></div>
+                
             </div>
-          
             <div class="col-12 col-md-5 mt-4">
                 
         <div class="container">
@@ -14,11 +14,11 @@
                     <div class="card shadow zindex-100 mb-0">
                         <div class="card-body px-md-5 py-5">
                             <div class="mb-5">
-                                <h6 class="h3">
+                                <h1>
                         Register to create Board
-                                </h6>
+                                </h1>
                                 <p class="text-muted mb-0">
-                                    <router-link to="/login" class="router-link">Already have an account? Login</router-link>
+                                    <h5><router-link to="/login" class="router-link">Already have an account? Login</router-link></h5> 
                                 </p>
                             </div>
                             <span class="clearfix"></span>
@@ -104,4 +104,8 @@ export default {
     color:blue;
     text-decoration: underline;
 }
+.img{
+    filter: blur(2px);
+}
+
 </style>
