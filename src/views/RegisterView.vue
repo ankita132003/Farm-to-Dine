@@ -50,7 +50,7 @@
                                 </div>
                                 <!-- <div class="input-group"> -->
                                     <label class="checkbox-button">
-                                        <h5><input type="checkbox" name="isfarmer" id="isFarmer" value="isfarmer">
+                                        <h5><input type="checkbox" v-modal="isfarmer" @click="handleChecked">
                                          I'm a Farmer </h5>
                                     </label>
                                 <!-- </div> -->
@@ -76,12 +76,16 @@ export default {
         const data ={
             username: this.username,
             email: this.email,
-            password: this.password
+            password: this.password,
+            isfarmer : this.isfarmer
         }
       console.log('data', data)
        const response  = await axios.post('api/users/create', data)
        console.log('response', response)
        this.$router.push('/login')
+    },
+    handleChecked() {
+        this.isfarmer = !this.isfarmer
     }
     
   },
@@ -90,7 +94,8 @@ export default {
       auth: false,
         username: '',
         email: '',
-        password: ''
+        password: '',
+        isfarmer: false,
     }
   }
 }
