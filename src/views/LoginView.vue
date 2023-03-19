@@ -83,6 +83,8 @@ export default {
         localStorage.setItem('tocken' , response.data.data.id)
         localStorage.setItem('user' , response.data.data.user)
         localStorage.setItem('email' , response.data.data.email)
+        localStorage.setItem('id',response.data.data.id)
+        localStorage.setItem('role', response.data.data.isfarmer)
         if(response.status === 200){
             this.$router.push('/')
         }

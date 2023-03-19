@@ -1,7 +1,7 @@
 <template>
   <NavBar />
   <div>
-    <h1>Home View</h1>
+    <h1 v-if="isfarmer"> Farmer</h1>
     <div v-if="user">
       <h2>{{ user.user}}</h2>
       <p>{{ user.email }}</p>
@@ -22,7 +22,11 @@ export default {
   },
   data() {
     return {
+      user: null,
+      isfarmer: false
     }
+  },
+  computed: {
   },
   created(){
     if (!localStorage.getItem('tocken'))  {
@@ -32,9 +36,11 @@ export default {
 
   },
   async mounted(){
-    let response  =  await axios.get('/api/user')
+    let response  =  await axios.get('/api/users/farmer')
     let user  =  response.data.data
     console.log(user)
+    this.user = user
+    this.isfarmer = user.isfarmer
     this.$store.dispatch('user' , user)
   },
  
