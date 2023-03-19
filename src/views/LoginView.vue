@@ -115,10 +115,6 @@ export default {
         text-align: center;
     }
     .middle{
-<<<<<<< HEAD
-        margin-top: 50px;   
-=======
         margin-top: 50px;
->>>>>>> c8651d58e0819592a02d5d4c3229a146784f6b8a
     }
 </style>
