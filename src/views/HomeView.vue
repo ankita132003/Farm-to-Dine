@@ -1,9 +1,8 @@
 <template>
-  <NavBar/>
+  <NavBar />
   <div>
     <div v-if="user">
-      <div class="container ">
-        
+      <div class="container">
         <h2>User:{{ user.user }}</h2>
         <p>Email : {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
@@ -11,33 +10,32 @@
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
-            <div class="card m-3">
-        <div class="card-body">
-          <ol>
-          <div >
-            <li  v-for="item  in crop" :key="item.id">
-              <div class="card2 m-3">
-                <div class="card-body">
-                  <p>Crop Name : {{ item.name }}</p>
-                  <p>Price : {{ item.price }}</p>
-                  <p>Area : {{ item.area }}</p>
-                  <p>Phone number : {{ item.phone }}</p>
-                  <p>Location : {{ item.latitude }},{{ item.longitude }}</p>
-                </div>
-                </div>
-            </li>
-      </div>
-      </ol>
-        </div>
-        </div>
-       
+            <!-- <div class="card m-3">
+              <div class="card-body"> -->
+                <ol>
+                  <div>
+                    <li v-for="item in crop" :key="item.id">
+                      <div class="card crop m-3">
+                      <div class="card-body">
+                      <p>Crop Name : {{ item.name }}</p>
+                      <p>Price : {{ item.price }}</p>
+                      <p>Area : {{ item.area }}</p>
+                      <p>Phone number : {{ item.phone }}</p>
+                      <p>Location : {{ item.latitude }},{{ item.longitude }}</p>
+                      </div>
+                      </div>
+                    </li>
+                  </div>
+                </ol>
+              <!-- </div>
+            </div> -->
           </div>
           <div class="col-md-6">
             <h4>Listings of local Service providers</h4>
             <ol>
               <div>
                 <li v-for="item in listing" :key="item.id">
-                  <div class="card m-3">
+                  <div class="card service m-3">
                     <div class="card-body">
                       <p>description : {{ item.description }}</p>
                       <p>Price : {{ item.price }}</p>
@@ -57,7 +55,6 @@
     <div v-else>
       <p>Loading user data...</p>
     </div>
-  
   </div>
 </template>
 <script>
@@ -73,12 +70,12 @@ export default {
       user: null,
       isfarmer: false,
       listing: [],
-      latitude: '',
-      longitude: '',
-      crop : []
-    }
+      latitude: "",
+      longitude: "",
+      crop: [],
+    };
   },
-   
+
   computed: {},
   created() {
     if (!localStorage.getItem("tocken")) {
@@ -87,20 +84,20 @@ export default {
     }
   },
   async mounted() {
-    let response = await axios.get('/api/users/farmer')
-    let user = response.data.data
-    console.log(user)
-    this.user = user
-    this.isfarmer = user.isfarmer
-    this.$store.dispatch('user', user)
-    let response2 = await axios.get('/api/listing')
-    let listing = response2.data
-    console.log(listing.data)
-    this.listing = listing.data
-    let response3 = await axios.get('/api/crop')
-    let crop = response3.data
-    console.log(crop.data)
-    this.crop = crop.data
+    let response = await axios.get("/api/users/farmer");
+    let user = response.data.data;
+    console.log(user);
+    this.user = user;
+    this.isfarmer = user.isfarmer;
+    this.$store.dispatch("user", user);
+    let response2 = await axios.get("/api/listing");
+    let listing = response2.data;
+    console.log(listing.data);
+    this.listing = listing.data;
+    let response3 = await axios.get("/api/crop");
+    let crop = response3.data;
+    console.log(crop.data);
+    this.crop = crop.data;
   },
   methods: {
     locatorButtonPressed() {
@@ -131,10 +128,10 @@ export default {
   text-align: center;
   background-color: antiquewhite;
 }
-.card{
+.service {
   background-color: rgb(227, 187, 216);
 }
-.card2{
+.crop {
   background-color: rgb(209, 238, 228);
 }
 </style>
