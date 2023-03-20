@@ -49,8 +49,11 @@
                                         <div class="mt-4 form-body">
                                             <button type="submit"  name="login" class="btn btn-block btn-primary">Sign in</button></div>
                                     </form>
+                                    <p class="text-muted mb-0 link">
+                                              <router-link to="/listing" class="router-link"> <h5> List Services </h5></router-link>
+                                </p>
                                 </div>
-                               
+                                
                             </div>
                         </div>
                     </div>
