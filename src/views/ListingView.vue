@@ -59,6 +59,16 @@ export default{
             })
             console.log(response)
         }
+    },
+    mounted(){
+        navigator.geolocation.getCurrentPosition(
+     position => {
+       console.log(position.coords.latitude);
+       console.log(position.coords.longitude);
+         this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
     }
-} 
+    );
+    }
+}
 </script>
