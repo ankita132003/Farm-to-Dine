@@ -2,14 +2,17 @@
   <NavBar/>
   <div v-if ='isfarmer'>
     <div v-if="user">
-      <div class="container">
-        <div>
+     
+        <div class="start">
+          <div class="text">
         <h2>{{ user.user }}</h2>
         <p> {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
         <button @click="locatorButtonPressed">Get Location</button>
       </div>
         <hr>
+      </div>
+        <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
@@ -149,5 +152,12 @@ export default {
 }
 .crop {
   background-color: rgb(209, 238, 228);
+}
+.start{
+  background-color: rgb(210, 123, 123);
+  /* margin-left: 20px; */
+}
+.text{
+margin-left: 20px;
 }
 </style>
