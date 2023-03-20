@@ -12,14 +12,14 @@
               Get Location
             </button>
           </div>
-          <hr>
+        
         </div>
         <div class="img">
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h3>Your Crop listings</h3>
-              <hr />
+              <h3 class="mt-3">Your Crop listings</h3>
+              <hr/>
               <ol>
                 <div>
                   <li v-for="item in crop" :key="item.id">
@@ -39,7 +39,7 @@
               </ol>
             </div>
             <div class="col-md-6">
-              <h3>Listings of local Service providers</h3>
+              <h3 class="mt-3">Listings of local Service providers</h3>
               <hr />
               <ol>
                 <div>
