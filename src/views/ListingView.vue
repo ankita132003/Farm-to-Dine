@@ -69,7 +69,7 @@
             />
           </h5>
         </div>
-        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        <button type="submit" class="btn btn-primary form-group mb-3 ">Submit</button>
       </div>
     </div>
   </form>
@@ -129,7 +129,7 @@ export default{
   margin-right: 50px;
 }
 .btn {
-  margin-left: 1145px;
+  /* margin-left: 1145px; */
   width: 100px;
   height: 50px;
   font-size: 20px;
