@@ -8,10 +8,25 @@
         <h2> User:{{ user.user }}</h2>
         <p>Email : {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
-        
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
+        <ol>
+          <div >
+            <li  v-for="item  in crop" :key="item.id">
+              <div class="card m-3">
+                <div class="card-body">
+                  <p> description : {{ item.description }}</p>
+                  <p>Price : {{ item.price }}</p>
+                  <p>Service : {{ item.service_name }}</p>
+                  <p>Provide Name : {{ item.name }}</p>
+                  <p>Phone number : {{ item.phone }}</p>
+                  <p>Location : {{ item.latitude }},{{ item.longitude }}</p>
+                </div>
+                </div>
+            </li>
+      </div>
+      </ol>
           </div>
           <div class="col-md-6">
             <h4>Listings of local Service providers</h4>
@@ -54,7 +69,8 @@ export default {
       isfarmer: false,
       listing: [],
       latitude: '',
-      longitude: ''
+      longitude: '',
+      crop : []
     }
   },
   computed: {
@@ -77,7 +93,10 @@ export default {
     let listing = response2.data
     console.log(listing.data)
     this.listing = listing.data
-
+    let response3 = await axios.get('/api/crop')
+    let crop = response3.data
+    console.log(crop.data)
+    this.crop = crop.data
   },
   methods: {
     locatorButtonPressed() {
