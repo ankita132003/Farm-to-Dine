@@ -1,12 +1,15 @@
 <template>
-  <NavBar />
-  <div>
+  <NavBar/>
+  <div v-if ='isfarmer'>
     <div v-if="user">
       <div class="container">
         <h2>User:{{ user.user }}</h2>
         <p>Email : {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
         <button @click="locatorButtonPressed">Get Location</button>
+        <div v-if="isowner" class="m-3">
+    <LandOwner />
+  </div>
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
@@ -59,16 +62,19 @@
 </template>
 <script>
 import NavBar from "@/components/NavBar.vue";
+import LandOwner from "@/components/LandOwner.vue";
 import axios from "axios";
 export default {
   name: "HomeView",
   components: {
     NavBar,
+   LandOwner
   },
   data() {
     return {
       user: null,
-      isfarmer: false,
+      isfarmer: '',
+      isowner:'',
       listing: [],
       latitude: "",
       longitude: "",
@@ -86,10 +92,10 @@ export default {
   async mounted() {
     let response = await axios.get("/api/users/farmer");
     let user = response.data.data;
-    console.log(user);
+    console.log('user : ',user);
     this.user = user;
     this.isfarmer = user.isfarmer;
-    this.$store.dispatch("user", user);
+    this.isowner = user.isowner;
     let response2 = await axios.get("/api/listing");
     let listing = response2.data;
     console.log(listing.data);

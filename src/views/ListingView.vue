@@ -1,4 +1,5 @@
 <template>
+  <NavBar/>
   <form @submit.prevent="handleSubmit">
     <!-- header for lisisting -->
     <div class="header">
@@ -76,9 +77,12 @@
 </template>
 <script>
 import axios from "axios";
-
+import NavBar from "@/components/NavBar.vue";
 export default{
     name  : 'ListingView' ,
+    components:{
+        NavBar
+    },
     data(){
         return{
             name:'',

@@ -15,6 +15,9 @@
             <router-link to="/product">Add Crop</router-link>
               </li>
               <li>
+            <router-link to="/listing">Provide service</router-link>
+              </li>
+              <li>
                 <button @click="logout">Logout</button>
               </li>
         </ul>

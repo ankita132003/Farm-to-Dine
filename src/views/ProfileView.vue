@@ -1,11 +1,11 @@
 <template>
+<NavBar/>
    <form @submit.prevent="handleSubmit">
     <!-- header for lisisting -->
     <div class="header">
       <h1>Create Your crop portfolio</h1>
       <hr />
     </div>
-
     <!-- form for listing services -->
     <div class="container">
       <div class="card mt-5">
@@ -65,9 +65,12 @@
 <script>
 import axios from 'axios';
 
-
+import NavBar from '../components/NavBar.vue';
 export default {
   name :'ProfileView',
+  components: {
+    NavBar,
+  },
   data() {
     return {
       name: '',

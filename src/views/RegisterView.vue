@@ -57,6 +57,10 @@
                                         <h5><input type="checkbox" v-modal="isfarmer" @click="handleChecked">
                                             I'm a Farmer </h5>
                                     </label>
+                                    <div>
+                                        <h5><input type="checkbox" v-modal="isowner" @click="handleowner">
+                                            I'm a Owner </h5>
+                                    </div>
                                   
                                     <div class="mt-4">
                                         <button type="submit" style="color: aliceblue; background-color: black;"
@@ -82,7 +86,8 @@ export default {
                 username: this.username,
                 email: this.email,
                 password: this.password,
-                isfarmer: this.isfarmer
+                isfarmer: this.isfarmer,
+                isowner: this.isowner
             }
             console.log('data', data)
             const response = await axios.post('api/users/create', data)
@@ -91,6 +96,9 @@ export default {
         },
         handleChecked() {
             this.isfarmer = !this.isfarmer
+        },
+        handleowner() {
+            this.isowner = !this.isowner
         }
 
     },
@@ -101,6 +109,7 @@ export default {
             email: '',
             password: '',
             isfarmer: false,
+            isowner: false
         }
     }
 }
