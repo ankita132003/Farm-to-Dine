@@ -1,6 +1,6 @@
 <template>
 <NavBar/>
-   <form @submit.prevent="handleSubmit">
+   <form @submit.prevent="handleSubmit" class="color">
     <!-- header for lisisting -->
     <div class="header">
       <h1>Create Your crop portfolio</h1>
@@ -123,5 +123,9 @@ export default {
   width: 100px;
   height: 50px;
   font-size: 20px;
+}
+.color{
+  background-color: antiquewhite;
+
 }
 </style>
