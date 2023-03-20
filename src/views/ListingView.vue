@@ -103,10 +103,9 @@ export default{
               let response =  axios.post('/api/listing',data)
               response.then((res)=>{
                   console.log(res)
-                  
-
+                  this.$router.push('/')
               })
-      this.$router.push('/listing')
+      
         }
     },
     mounted(){

@@ -6,10 +6,28 @@
         <h2>User:{{ user.user }}</h2>
         <p>Email : {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e9433a8ccbeeef5ebbf4677d662dc72b4077b11
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
+        <ol>
+          <div >
+            <li  v-for="item  in crop" :key="item.id">
+              <div class="card m-3">
+                <div class="card-body">
+                  <p>Crop Name : {{ item.name }}</p>
+                  <p>Price : {{ item.price }}</p>
+                  <p>Area : {{ item.area }}</p>
+                  <p>Phone number : {{ item.phone }}</p>
+                  <p>Location : {{ item.latitude }},{{ item.longitude }}</p>
+                </div>
+                </div>
+            </li>
+      </div>
+      </ol>
           </div>
           <div class="col-md-6">
             <h4>Listings of local Service providers</h4>
@@ -52,9 +70,18 @@ export default {
       user: null,
       isfarmer: false,
       listing: [],
+<<<<<<< HEAD
       latitude: "",
       longitude: "",
     };
+=======
+      latitude: '',
+      longitude: '',
+      crop : []
+    }
+  },
+  computed: {
+>>>>>>> 8e9433a8ccbeeef5ebbf4677d662dc72b4077b11
   },
   computed: {},
   created() {
@@ -64,16 +91,20 @@ export default {
     }
   },
   async mounted() {
-    let response = await axios.get("/api/users/farmer");
-    let user = response.data.data;
-    console.log(user);
-    this.user = user;
-    this.isfarmer = user.isfarmer;
-    this.$store.dispatch("user", user);
-    let response2 = await axios.get("/api/listing");
-    let listing = response2.data;
-    console.log(listing.data);
-    this.listing = listing.data;
+    let response = await axios.get('/api/users/farmer')
+    let user = response.data.data
+    console.log(user)
+    this.user = user
+    this.isfarmer = user.isfarmer
+    this.$store.dispatch('user', user)
+    let response2 = await axios.get('/api/listing')
+    let listing = response2.data
+    console.log(listing.data)
+    this.listing = listing.data
+    let response3 = await axios.get('/api/crop')
+    let crop = response3.data
+    console.log(crop.data)
+    this.crop = crop.data
   },
   methods: {
     locatorButtonPressed() {
