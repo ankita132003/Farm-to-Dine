@@ -2,6 +2,7 @@
   <NavBar />
   
   <div>
+
     <h1 v-if="isfarmer">Farmer</h1>
     <div v-if="user">
       <h2>{{ user.user}}</h2>
@@ -74,3 +75,12 @@ export default {
  
 }
 </script>
+<style>
+  .farmer{
+    text-align: center;
+    background-color: antiquewhite;
+  }
+
+
+
+</style>
