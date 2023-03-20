@@ -5,11 +5,30 @@
             Contact Farming 
         </button>
     </div>
+    <div>
+        <h4>
+           Your Active Contracts 
+        </h4>
+        <div class="row">
+        <div class="col-md-4" v-for ='(items ,  index ) in contract' :key="index">
+            <div class="card m-3 p-2" style="width: 20rem, height:20rem" >
+               <p>Name : {{items.name}}</p>
+               <p>Area : {{items.area}}</p>
+                <p>Min Price : {{items.price}}</p>
+                <button class="btn btn-primary" @click="ContactFarming">
+                    View Bids & Clause</button>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
 export default {
     name: "LandOwner",
+    props: {
+        contract: Object,
+    },
     data() {
         return {
             crop: [],

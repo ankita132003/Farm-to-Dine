@@ -3,13 +3,13 @@
   <div v-if ='isfarmer'>
     <div v-if="user">
       <div class="container">
-        <h2>User:{{ user.user }}</h2>
-        <p>Email : {{ user.email }}</p>
+        <div>
+        <h2>{{ user.user }}</h2>
+        <p> {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
         <button @click="locatorButtonPressed">Get Location</button>
-        <div v-if="isowner" class="m-3">
-    <LandOwner />
-  </div>
+      </div>
+        <hr>
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
@@ -53,6 +53,9 @@
             </ol>
           </div>
         </div>
+        <div v-if="isowner" class="m-3">
+    <LandOwner  :contract=contract />
+  </div>
       </div>
     </div>
     <div v-else>
@@ -79,6 +82,7 @@ export default {
       latitude: "",
       longitude: "",
       crop: [],
+      contract: [],
     };
   },
 
@@ -104,6 +108,12 @@ export default {
     let crop = response3.data;
     console.log(crop.data);
     this.crop = crop.data;
+
+    let response4 = await axios.get("/api/contract");
+    let contract = response4.data;
+    console.log('contracts',contract.data);
+    this.contract = contract.data;
+
   },
   methods: {
     locatorButtonPressed() {
