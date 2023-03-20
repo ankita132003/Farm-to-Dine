@@ -1,11 +1,13 @@
 <template>
   <NavBar />
   <div>
-    <h1 v-if="isfarmer"> Farmer</h1>
-    <div v-if="user">
-      <h2>{{ user.user}}</h2>
-      <p>{{ user.email }}</p>
-      <p>{{ user.id }}</p>
+    <!-- <h1 v-if="isfarmer" class="farmer"> Farmer</h1> -->
+    <!-- <hr> -->
+    <div v-if="user" class="farmer">
+      <h2 >{{ user.user}}</h2>
+      <h4><p>{{ user.email }}</p></h4>
+      <hr>
+      <!-- <p>{{ user.id }}</p> -->
     </div>
     <div v-else>
       <p>Loading user data...</p>
@@ -46,3 +48,12 @@ export default {
  
 }
 </script>
+<style>
+  .farmer{
+    text-align: center;
+    background-color: antiquewhite;
+  }
+
+
+
+</style>
