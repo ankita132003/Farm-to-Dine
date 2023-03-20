@@ -16,10 +16,9 @@
             <li  v-for="item  in crop" :key="item.id">
               <div class="card m-3">
                 <div class="card-body">
-                  <p> description : {{ item.description }}</p>
+                  <p>Crop Name : {{ item.name }}</p>
                   <p>Price : {{ item.price }}</p>
-                  <p>Service : {{ item.service_name }}</p>
-                  <p>Provide Name : {{ item.name }}</p>
+                  <p>Area : {{ item.area }}</p>
                   <p>Phone number : {{ item.phone }}</p>
                   <p>Location : {{ item.latitude }},{{ item.longitude }}</p>
                 </div>
