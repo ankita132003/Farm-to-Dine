@@ -1,8 +1,9 @@
 <template>
-  
+  <NavBar/>
   <div>
     <div v-if="user">
-      <div class="container m-2">
+      <div class="container ">
+        
         <h2>User:{{ user.user }}</h2>
         <p>Email : {{ user.email }}</p>
         <p>Location : {{ latitude }},{{ longitude }}</p>
@@ -10,7 +11,9 @@
         <div class="row">
           <div class="col-md-6">
             <h4>Your Crop listings</h4>
-        <ol>
+            <div class="card m-3">
+        <div class="card-body">
+          <ol>
           <div >
             <li  v-for="item  in crop" :key="item.id">
               <div class="card2 m-3">
@@ -25,6 +28,9 @@
             </li>
       </div>
       </ol>
+        </div>
+        </div>
+       
           </div>
           <div class="col-md-6">
             <h4>Listings of local Service providers</h4>
