@@ -106,9 +106,16 @@ export default{
                     latitude: this.latitude,
                     longitude: this.longitude,
                 }
+
             })
             console.log(response)
         }
+    },
+    mounted(){
+        navigator.geolocation.getCurrentPosition((position) => {
+            this.latitude = position.coords.latitude;
+            this.longitude = position.coords.longitude;
+        });
     }
 } 
 </script>
