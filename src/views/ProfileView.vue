@@ -112,7 +112,7 @@ export default {
 <style>
   .header {
   text-align: center;
-  background-color: rgb(215, 255, 167);
+  background-color: rgb(199, 244, 145);
 }
 .form-group {
   margin-left: 50px;
