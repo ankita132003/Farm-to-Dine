@@ -47,7 +47,7 @@ export default {
     this.isfarmer = user.isfarmer
     this.$store.dispatch('user' , user)
     let response2  =  await axios.get('/api/listing')
-    let listing  =  response2.data.data
+    let listing  =  response2.data
     console.log(listing)
   },
   methods: {
