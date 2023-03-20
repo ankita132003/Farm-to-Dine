@@ -11,16 +11,15 @@
            <li>
             <router-link to="/">Home</router-link>
            </li>
-          
-              <li>
+              <!-- <li>
             <router-link to="/profile">Profile</router-link>
-              </li>
+              </li> -->
               <li>
                 <button @click="logout">Logout</button>
               </li>
         </ul>
       </div>
-      <div class="actions">
+      <!-- <div class="actions">
         <a href="#" class="add-post">
           <i class="fa fa-plus"></i>
         </a>
@@ -28,9 +27,9 @@
           <i class="fa fa-heart-o"></i>
         </a>
         <a href="#" class="profile">
-          <!-- <img src="./assets/profile.png" alt="Profile"> -->
-        </a>
-      </div>
+       <img src="./assets/profile.png" alt="Profile"> -->
+        <!-- </a> -->
+      <!-- </div>  -->
     </nav>
   </template>
   

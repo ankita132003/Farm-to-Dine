@@ -1,17 +1,20 @@
 <template>
   <NavBar />
+  
   <div>
-    <!-- <h1 v-if="isfarmer" class="farmer"> Farmer</h1> -->
-    <!-- <hr> -->
-    <div v-if="user" class="farmer">
-      <h2 >{{ user.user}}</h2>
-      <h4><p>{{ user.email }}</p></h4>
-      <hr>
-      <!-- <p>{{ user.id }}</p> -->
+
+    <h1 v-if="isfarmer">Farmer</h1>
+    <div v-if="user">
+      <h2>{{ user.user}}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.id }}</p>
+      <p>{{ user.latitude }}</p>
+      <p>{{ user.longitude }}</p>
     </div>
     <div v-else>
       <p>Loading user data...</p>
     </div>
+    <button @click="locatorButtonPressed">Get Location</button>
   </div>
 </template>
 <script>
@@ -45,6 +48,27 @@ export default {
     this.isfarmer = user.isfarmer
     this.$store.dispatch('user' , user)
   },
+  methods: {
+  locatorButtonPressed() {
+  navigator.geolocation.getCurrentPosition(
+     position => {
+       console.log(position.coords.latitude);
+       console.log(position.coords.longitude);
+       let response  = axios.post('/api/users/farmer/location' , {
+         latitude: position.coords.latitude,
+         longitude: position.coords.longitude
+       })
+       response.then(res => {
+         console.log(res)
+       })
+     },
+     error => {
+       console.log(error.message);
+     },
+  )   
+}
+  }
+
  
 }
 </script>
