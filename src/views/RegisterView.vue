@@ -33,7 +33,6 @@
                                                 v-model="username">
                                         </div>
                                     </div>
-
                                     <div class="form-group">
                                         <label class="form-control-label">Email</label>
                                         <div class="input-group">
@@ -53,12 +52,12 @@
 
                                         </div>
                                     </div>
-                                    <!-- <div class="input-group"> -->
+                                   
                                     <label class="checkbox-button">
                                         <h5><input type="checkbox" v-modal="isfarmer" @click="handleChecked">
                                             I'm a Farmer </h5>
                                     </label>
-                                    <!-- </div> -->
+                                  
                                     <div class="mt-4">
                                         <button type="submit" style="color: aliceblue; background-color: black;"
                                             name="register" class="btn btn-block btn-primary">Sign in</button>

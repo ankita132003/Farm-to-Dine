@@ -87,28 +87,26 @@ export default{
             description:'',
             phone:'',
             latitude:'',
-            longitude:''
-
-
+            longitude:'',
         }
     },
     methods:{
         handleSubmit(){
-           let response = axios({
-                method: 'post',
-                url: 'api/listings',
-                data: {
-                    name: this.name,
-                    service_name: this.service_name,
-                    price: this.price,
-                    description: this.description,
-                    phone: this.phone,
-                    latitude: this.latitude,
-                    longitude: this.longitude,
-                }
+            const data = {
+                name:this.name,
+                service_name:this.service_name,
+                price:this.price,
+                description:this.description,
+                phone:this.phone,
+                latitude:this.latitude,
+                longitude:this.longitude}
+              let response =  axios.post('/api/listing',data)
+              response.then((res)=>{
+                  console.log(res)
+                  
 
-            })
-            console.log(response)
+              })
+      this.$router.push('/listing')
         }
     },
     mounted(){
