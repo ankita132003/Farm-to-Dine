@@ -120,6 +120,6 @@ export default {
         text-align: center;
     }
     .middle{
-        margin-top: 10px;
+        margin-top: 20px;
     }
 </style>
