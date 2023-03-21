@@ -135,7 +135,7 @@ export default{
   font-size: 20px;
 }
 .cardcolor{
-  background-color: rgb(195, 225, 94);
+  background-color: rgb(224, 180, 158);
 }
 .header{
   background-color: rgb(152, 71, 30);
